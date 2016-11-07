@@ -1,4 +1,4 @@
-package fr.esiea.inf4042.projet.inf4042_hayotte_cosson;
+package fr.esiea.android.projet.mobile;
 
 import org.junit.Test;
 

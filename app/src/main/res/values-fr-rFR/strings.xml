@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Android4A</string>
     <string name="messageBienvenue">Salut le monde! Mis sur GitHub</string>
     <string name="message2">Mode Portrait :D</string>
     <string name="button">Cliquer</string>
+    <string name="button2">DATE</string>
+    <string name="datehere">Ici se trouve la date</string>
+    <string name="notifButton">Notification</string>
+    <string name="openNewActivityButton">Ouvrir</string>
 </resources>
