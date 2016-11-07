@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="messageBienvenue">Salut le monde! Mis sur GitHub</string>
+    <string name="message2">Mode Portrait :D</string>
+    <string name="button">Cliquer</string>
+</resources>

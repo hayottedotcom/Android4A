@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">INF4042_HAYOTTE_COSSON</string>
+    <string name="messageBienvenue">Hello World! Pushed on GitHub</string>
+    <string name="message2">Landscape :D</string>
+    <string name="button">OK</string>
 </resources>
