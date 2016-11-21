@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GetBiersServices.startActionGetAllBiers(this);
+
 
 
 
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 Notif();
             }
         });
+
     }
 
 
@@ -76,5 +77,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent (this, testNewActivity.class);
         //startActivity(intent);
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=Londres")));
+    }
+
+    public void openBeerActivity(View view) {
+        Intent intent = new Intent (this, BeerActivity.class);
+        startActivity(intent);
     }
 }

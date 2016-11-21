@@ -8,4 +8,5 @@
     <string name="datehere">Ici se trouve la date</string>
     <string name="notifButton">Notification</string>
     <string name="openNewActivityButton">Ouvrir</string>
+    <string name="beerButton">Bière</string>
 </resources>

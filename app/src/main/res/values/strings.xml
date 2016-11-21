@@ -7,4 +7,5 @@
     <string name="datehere">Here is set the date</string>
     <string name="notifButton">NOTIF</string>
     <string name="openNewActivityButton">Open</string>
+    <string name="beerButton">Beer</string>
 </resources>
