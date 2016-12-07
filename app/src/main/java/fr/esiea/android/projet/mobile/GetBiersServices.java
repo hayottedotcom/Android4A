@@ -95,14 +95,14 @@ public class GetBiersServices extends IntentService {
         Log.d("TAG", "Thread service name:"+Thread.currentThread().getName());
         URL url = null;
         try {
-            url = new URL("http://binouze.fabrigli.fr/bieres.json");
+            url = new URL("http://82.236.131.8/jsonAuBonTerroirDeChezNous.json");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
             if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
                 copyInputStreamToFile(conn.getInputStream(),
-                        new File(getCacheDir(), "bieres.json"));
-                Log.d("TAG", "Bieres json downloaded !");
+                        new File(getCacheDir(), "recettes.json"));
+                Log.d("TAG", "Recettes téléchargées !");
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(BierUpdate.BIERS_UPDATE));
 
 

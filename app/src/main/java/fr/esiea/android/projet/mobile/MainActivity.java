@@ -3,15 +3,26 @@ package fr.esiea.android.projet.mobile;
 import android.app.DatePickerDialog;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,12 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
-        //TextView test1 = (TextView)findViewById(R.id.welcomeMsg);
-        //test1.setText("Yo!");
 
         Button but1 = (Button)findViewById(R.id.button);
         but1.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
 
@@ -83,4 +90,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent (this, BeerActivity.class);
         startActivity(intent);
     }
+
+
+
+
+
+
 }
