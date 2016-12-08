@@ -1,12 +1,8 @@
 <resources>
-    <string name="app_name">Android4A</string>
-    <string name="messageBienvenue">Hello World! Pushed on GitHub</string>
-    <string name="message2">Landscape :D</string>
-    <string name="button">OK</string>
-    <string name="button2">DATE</string>
-    <string name="datehere">Here is set the date</string>
-    <string name="notifButton">NOTIF</string>
-    <string name="openNewActivityButton">Open</string>
-    <string name="beerButton">Beer</string>
-    <string name="title_activity_recette">RecetteActivity</string>
+    <string name="app_name">Au Bon Terroir De Chez Nous</string>
+    <string name="messageBienvenue">Welcome\nAu Bon Terroir De Chez Nous</string>
+    <string name="openNewActivityButton">Open Web version</string>
+    <string name="beerButton">Cook Book</string>
+    <string name="title_activity_recette">Cook Book</string>
+    <string name="credit">App developped by Florent Cosson and Adrien Hayotte</string>
 </resources>

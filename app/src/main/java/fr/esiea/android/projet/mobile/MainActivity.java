@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final TextView dateZone = (TextView)findViewById(R.id.textView2);
+        /*final TextView dateZone = (TextView)findViewById(R.id.textView2);
         final DatePickerDialog dpd=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dpd.show();
             }
-        });
+        });*/
+
+        ImageView bg = (ImageView) findViewById(R.id.backgroundImage);
+        bg.setFitsSystemWindows(true);
 
     }
 
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplication())
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle("Au bon terroir de chez nous")
-                        .setContentText("Vous accèdez actuellement à la version WEB de notre application, réalisé dans le cadre d'un autre porjet !");
+                        .setContentText("Vous accédez actuellement à la version Web de notre application, réalisée dans le cadre du projet Web 4A !");
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
         mNotificationManager.notify(1, mBuilder.build());
     }

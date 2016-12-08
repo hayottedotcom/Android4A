@@ -18,7 +18,7 @@ public class BierUpdate extends BroadcastReceiver{
     @Override
     public void onReceive(Context context, Intent intent) {
     Log.d(TAG,intent.getAction());
-        Toast txtDownloaded = Toast.makeText(context,"JSON Downloaded",Toast.LENGTH_LONG);
+        Toast txtDownloaded = Toast.makeText(context,"JSON OK",Toast.LENGTH_LONG);
         txtDownloaded.show();
         ba.setNewBiere();
 }

@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Parcelable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,7 +34,6 @@ import java.net.URL;
 public class BeerActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class BeerActivity extends AppCompatActivity {
         GetBiersServices.startActionGetAllBiers(this);
 
         recyclerView.setAdapter(ba);
+
 
 
 
@@ -90,9 +92,18 @@ public class BeerActivity extends AppCompatActivity {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                            Intent intent=new Intent(getApplicationContext(),RecetteActivity.class);
-
-                            startActivity(intent);
+                        holder.img.buildDrawingCache();
+                        Bitmap image= holder.img.getDrawingCache();
+                        Bundle extras = new Bundle();
+                        extras.putParcelable("imagebitmap", image);
+                        Intent intent=new Intent(getApplicationContext(),RecetteActivity.class);
+                        intent.putExtras(extras);
+                        try {
+                            intent.putExtra("titre",bieres.getJSONObject(position).getString("nom_recette"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        startActivity(intent);
 
 
                     }
@@ -121,7 +132,6 @@ public class BeerActivity extends AppCompatActivity {
             public TextView name;
             public BierHolder(View itemView) {
                 super(itemView);
-                imgRecette = (ImageView) itemView.findViewById(R.id.imageViewRecette);
                     img = (ImageView) itemView.findViewById(R.id.imageView);
                     name = (TextView) itemView.findViewById(R.id.rv_bier_element_name);
 
@@ -170,7 +180,6 @@ public class BeerActivity extends AppCompatActivity {
 
         protected void onPostExecute(Drawable result) {
             bmImage.setImageDrawable(result);
-
         }
     }
 

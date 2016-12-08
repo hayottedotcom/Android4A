@@ -5,14 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/bg"
 
     tools:context="fr.esiea.android.projet.mobile.MainActivity"
     android:layout_width="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg"
+            android:adjustViewBounds="false"
+            android:layout_weight="-999"
+            android:scrollX="30dp" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -20,44 +31,50 @@
         android:layout_height="wrap_content"
         android:text="@string/messageBienvenue"
         android:fontFamily="sans-serif"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="center" />
-
-    <TextView
-        android:text="@string/datehere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:id="@+id/textView2"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_toEndOf="@+id/button2" />
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="#99000000"
+        android:textStyle="normal|bold" />
 
     <Button
         android:text="@string/openNewActivityButton"
         android:onClick="openNewActivity"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
-        android:layout_alignParentBottom="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"/>
 
-    <Button
+    <ImageButton
         android:text="@string/beerButton"
+        android:src="@drawable/buttonpng"
+        android:background="@null"
         android:onClick="openBeerActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button5"
+        android:paddingBottom="30dp"
         android:layout_above="@+id/button4"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="@string/button2"
-        android:layout_width="wrap_content"
+    <TextView
+        android:text="@string/credit"
+        android:textAlignment="center"
+        android:textColor="#CCFFFFFF"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/button3"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif" />
 
 </RelativeLayout>
