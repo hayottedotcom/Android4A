@@ -13,13 +13,6 @@
 
 
     <Button
-        android:text="@string/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:gravity="center"/>
-
-    <Button
         android:text="@string/openNewActivityButton"
         android:onClick="openNewActivity"
         android:layout_width="wrap_content"

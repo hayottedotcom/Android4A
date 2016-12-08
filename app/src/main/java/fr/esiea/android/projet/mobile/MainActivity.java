@@ -32,14 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button but1 = (Button)findViewById(R.id.button);
-        but1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast txt=Toast.makeText(getApplicationContext(),"Open New Activity",Toast.LENGTH_LONG);
-                txt.show();
-            }
-        });
+
         final TextView dateZone = (TextView)findViewById(R.id.textView2);
         final DatePickerDialog dpd=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -57,33 +50,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button but3 = (Button)findViewById(R.id.button3);
-        but3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Notif();
-            }
-        });
-
-
-
     }
 
 
     public void Notif() {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplication())
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("My notification")
-                        .setContentText("Hello World!");
+                        .setContentTitle("Au bon terroir de chez nous")
+                        .setContentText("Vous accèdez actuellement à la version WEB de notre application, réalisé dans le cadre d'un autre porjet !");
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
         mNotificationManager.notify(1, mBuilder.build());
     }
 
 
     public void openNewActivity(View view) {
-        Intent intent = new Intent (this, testNewActivity.class);
-        //startActivity(intent);
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=Londres")));
+        Notif();
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://82.236.131.8:8080"));
+        startActivity(browserIntent);
     }
 
     public void openBeerActivity(View view) {

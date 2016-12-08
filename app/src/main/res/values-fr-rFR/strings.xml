@@ -7,6 +7,6 @@
     <string name="button2">DATE</string>
     <string name="datehere">Ici se trouve la date</string>
     <string name="notifButton">Notification</string>
-    <string name="openNewActivityButton">Ouvrir</string>
+    <string name="openNewActivityButton">Allez vers le site web</string>
     <string name="beerButton">Bière</string>
 </resources>
