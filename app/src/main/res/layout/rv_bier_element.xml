@@ -7,19 +7,28 @@
         android:id="@+id/headerLinearLay" >
 
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"></ImageView>
+        android:layout_height="92dp"
+        android:layout_width="92dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="32dp"
+        android:maxHeight="32dp"
+        app:riv_corner_radius="1dp"
+        app:riv_border_width="1dp"
+        app:riv_border_color="#7f7f7f"
+        app:riv_mutate_background="true"
+        app:riv_oval="true" />
 
     <TextView
         android:id="@+id/rv_bier_element_name"
         android:text="TextView"
         android:layout_toRightOf="@id/imageView"
-        android:layout_centerVertical="true"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:paddingLeft="10dp"></TextView>
+        android:paddingLeft="10dp"
+        android:layout_centerVertical="true"></TextView>
 
 
 </RelativeLayout>
