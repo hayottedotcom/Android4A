@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Android4A</string>
+    <string name="app_name">Au Bon Terroir De Chez Nous</string>
     <string name="messageBienvenue">Salut le monde! Mis sur GitHub</string>
     <string name="message2">Mode Portrait :D</string>
     <string name="button">Cliquer</string>

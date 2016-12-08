@@ -1,5 +1,6 @@
 package fr.esiea.android.projet.mobile;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
 import android.app.NotificationManager;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
@@ -28,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
 
         final TextView dateZone = (TextView)findViewById(R.id.textView2);
         final DatePickerDialog dpd=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {

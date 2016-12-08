@@ -8,4 +8,5 @@
     <string name="notifButton">NOTIF</string>
     <string name="openNewActivityButton">Open</string>
     <string name="beerButton">Beer</string>
+    <string name="title_activity_recette">RecetteActivity</string>
 </resources>

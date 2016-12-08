@@ -1,14 +1,15 @@
 package fr.esiea.android.projet.mobile;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.app.Activity;
 
-public class testNewActivity extends AppCompatActivity {
+
+public class RecetteActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_new);
-
+        setContentView(R.layout.activity_recette);
     }
+
 }

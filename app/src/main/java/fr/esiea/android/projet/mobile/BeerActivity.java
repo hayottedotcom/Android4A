@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -38,6 +39,7 @@ public class BeerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beer_activity);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         BiersAdapter ba = new BiersAdapter();
 
@@ -57,6 +59,12 @@ public class BeerActivity extends AppCompatActivity {
 
 
     }
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+
+    }
 
     public class BiersAdapter extends RecyclerView.Adapter<BiersAdapter.BierHolder> {
 
@@ -73,11 +81,22 @@ public class BeerActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(BierHolder holder, int position) {
+        public void onBindViewHolder(final BierHolder holder,final int position) {
             try {
                 holder.name.setText(bieres.getJSONObject(position).getString("nom_recette"));
                 new DownloadImageTask(holder.img)
                         .execute(bieres.getJSONObject(position).getString("image_url"));
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                            Intent intent=new Intent(getApplicationContext(),RecetteActivity.class);
+
+                            startActivity(intent);
+
+
+                    }
+                });
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -98,10 +117,11 @@ public class BeerActivity extends AppCompatActivity {
         public class BierHolder extends RecyclerView.ViewHolder {
             private JSONArray biers;
             public ImageView img;
+            public ImageView imgRecette;
             public TextView name;
             public BierHolder(View itemView) {
                 super(itemView);
-
+                imgRecette = (ImageView) itemView.findViewById(R.id.imageViewRecette);
                     img = (ImageView) itemView.findViewById(R.id.imageView);
                     name = (TextView) itemView.findViewById(R.id.rv_bier_element_name);
 
