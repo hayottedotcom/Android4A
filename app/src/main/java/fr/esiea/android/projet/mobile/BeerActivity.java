@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -52,13 +54,6 @@ public class BeerActivity extends AppCompatActivity {
         GetBiersServices.startActionGetAllBiers(this);
 
         recyclerView.setAdapter(ba);
-
-
-
-
-
-
-
 
     }
     public boolean onOptionsItemSelected(MenuItem item){
@@ -100,6 +95,9 @@ public class BeerActivity extends AppCompatActivity {
                         intent.putExtras(extras);
                         try {
                             intent.putExtra("titre",bieres.getJSONObject(position).getString("nom_recette"));
+                            intent.putExtra("nom_region", bieres.getJSONObject(position).getString("nom_region"));
+                            intent.putExtra("tmpPrep", bieres.getJSONObject(position).getString("temps_preparation_min"));
+                            intent.putExtra("tmpCuis", bieres.getJSONObject(position).getString("temps_cuisson_min"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -130,10 +128,12 @@ public class BeerActivity extends AppCompatActivity {
             public ImageView img;
             public ImageView imgRecette;
             public TextView name;
+            public TextView name_region;
             public BierHolder(View itemView) {
                 super(itemView);
                     img = (ImageView) itemView.findViewById(R.id.imageView);
                     name = (TextView) itemView.findViewById(R.id.rv_bier_element_name);
+                    name_region = (TextView) itemView.findViewById(R.id.rv_bier_element_name);
 
             }
         }

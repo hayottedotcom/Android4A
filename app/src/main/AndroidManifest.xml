@@ -24,10 +24,13 @@
             android:name=".GetBiersServices"
             android:exported="false" />
 
-        <activity android:name=".BeerActivity" />
+        <activity
+            android:name=".BeerActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/list_name" />
         <activity
             android:name=".RecetteActivity"
-            android:label="@string/title_activity_recette"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

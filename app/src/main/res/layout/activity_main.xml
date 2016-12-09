@@ -13,6 +13,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
+
         <ImageView
             android:id="@+id/backgroundImage"
             android:layout_width="match_parent"
@@ -20,8 +21,9 @@
             android:scaleType="centerCrop"
             android:src="@drawable/bg"
             android:adjustViewBounds="false"
-            android:layout_weight="-999"
-            android:scrollX="30dp" />
+            android:layout_weight="-999" />
+
+        
     </LinearLayout>
 
 
@@ -76,5 +78,6 @@
         android:textAllCaps="false"
         android:textSize="10sp"
         android:fontFamily="sans-serif" />
+
 
 </RelativeLayout>
